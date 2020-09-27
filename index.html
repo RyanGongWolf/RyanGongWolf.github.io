@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
-	<title>个人主页</title>
+	<title>宫岩得个人主页</title>
 	<link rel="shortcut icon" href="images/t.ico" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
 
 	<link href="css/responsive.css" rel="stylesheet">
 
+	<link href="css/animate.css" rel="stylesheet">
 </head>
 <body>
 
@@ -49,7 +50,7 @@
 								<li><a href="https://github.com/RyanGongWolf"><span class="iconfont icon-git"></span></a></li>
 								<li><a href="mailto:rany_g_y@163.com?subject=通过我得主页发送的邮件&body=邮件内容："><span class="iconfont icon-e-mail"></span></a></li>
 								<li><a href="https://gitee.com/gong-yan"><span class="iconfont icon-gitee"></span></a></li>
-								<li><a id="copy_btn" data-clipboard-text="ryan-g-y"><span class="iconfont icon-weixin"></span></a></li>
+								<li><a id="copy_btn" data-clipboard-text="ryan-g-y" ><span class="iconfont icon-weixin"></span></a></li>
 							</ul>
 					</div><!-- col-sm-8 -->
 
@@ -324,7 +325,9 @@
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 		</p>
 	</footer>
-
+	<div id="item" class="item">
+		<img src="images/wx.jpg">
+	</div>
 
 	<!-- SCIPTS -->
 
@@ -345,16 +348,59 @@
 
 	<script src="js/scripts.js"></script>
 	<script src="js/clipboard.min.js"></script>
+	<script src="js/jquery.popup.min.js"></script>
 	<script>
-		$(document).ready(function(){
-			var clipboard = new Clipboard('#copy_btn');
-			clipboard.on('success', function(e) {
-				alert("微信号复制成功,请注明来意");
-				window.location.href='weixin://';
-				e.clearSelection();
-				console.log(e.clearSelection);
+		var mobile_flag = isMobile();
+		if (mobile_flag){
+			$(document).ready(function(){
+				var clipboard = new Clipboard('#copy_btn');
+				clipboard.on('success', function(e) {
+					alert("微信号复制成功,加好友请注明来意");
+					window.location.href='weixin://';
+				});
 			});
-		});
+		}else{
+
+			$('#copy_btn').on('click', function () {
+				$('#item').popup({
+					time: 1000,
+					classAnimateShow: 'flipInX',
+					classAnimateHide: 'hinge',
+					onPopupClose: function e() {
+						// console.log('0')
+					},
+					onPopupInit: function e() {
+						// console.log('1')
+					}
+				});
+			});
+		}
+
+		function isMobile() {
+			var userAgentInfo = navigator.userAgent;
+
+			var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+
+			var mobile_flag = false;
+
+			//根据userAgent判断是否是手机
+			for (var v = 0; v < mobileAgents.length; v++) {
+				if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+					mobile_flag = true;
+					break;
+				}
+			}
+
+			var screen_width = window.screen.width;
+			var screen_height = window.screen.height;
+
+			//根据屏幕分辨率判断是否是手机
+			if(screen_width < 500 && screen_height < 800){
+				mobile_flag = true;
+			}
+
+			return mobile_flag;
+		}
 	</script>
 
 </body>
