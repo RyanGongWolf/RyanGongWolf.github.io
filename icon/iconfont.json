@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4428532",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
       "icon_id": "7334992",
       "name": "github",
       "font_class": "git",

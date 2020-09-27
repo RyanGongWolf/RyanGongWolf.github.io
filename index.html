@@ -49,7 +49,7 @@
 								<li><a href="https://github.com/RyanGongWolf"><span class="iconfont icon-git"></span></a></li>
 								<li><a href="mailto:rany_g_y@163.com?subject=通过我得主页发送的邮件&body=邮件内容："><span class="iconfont icon-e-mail"></span></a></li>
 								<li><a href="https://gitee.com/gong-yan"><span class="iconfont icon-gitee"></span></a></li>
-
+								<li><a id="copy_btn" data-clipboard-text="ryan-g-y"><span class="iconfont icon-weixin"></span></a></li>
 							</ul>
 					</div><!-- col-sm-8 -->
 
@@ -330,6 +330,7 @@
 
 	<script src="js/jquery-3.2.1.min.js"></script>
 
+
 	<script src="js/tether.min.js"></script>
 
 	<script src="js/bootstrap.min.js"></script>
@@ -343,7 +344,18 @@
 	<script src="js/jquery.fluidbox.min.js"></script>
 
 	<script src="js/scripts.js"></script>
-
+	<script src="js/clipboard.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var clipboard = new Clipboard('#copy_btn');
+			clipboard.on('success', function(e) {
+				alert("微信号复制成功,请注明来意");
+				window.location.href='weixin://';
+				e.clearSelection();
+				console.log(e.clearSelection);
+			});
+		});
+	</script>
 
 </body>
 </html>

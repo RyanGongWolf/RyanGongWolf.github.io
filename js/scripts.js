@@ -70,6 +70,7 @@
 	});
 
 
+
 })(jQuery);
 
 function panelAccordian(){
