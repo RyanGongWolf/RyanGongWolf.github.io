@@ -208,17 +208,17 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
 					<div class="heading">
-						<h3><b>Portfolio</b></h3>
+						<h3><b>作品集</b></h3>
 						<h6 class="font-lite-black"><b>我的作品</b></h6>
 					</div>
 				</div><!-- col-sm-3 -->
 
 				<div class="col-sm-12 col-md-9">
 					<div class="portfolioFilter clearfix margin-b-80">
-						<a href="#" data-filter="*" class="current"><b>ALL</b></a>
-						<a href="#" data-filter=".web-design"><b>WEB DESIGN</b></a>
-						<a href="#" data-filter=".branding"><b>BRANDING</b></a>
-						<a href="#" data-filter=".graphic-design"><b>GRAPHIC DESIGN</b></a>
+						<a href="#" data-filter="*" class="current"><b>所有项目</b></a>
+						<a href="#" data-filter=".web-design"><b>可视化大屏类</b></a>
+						<a href="#" data-filter=".branding"><b>工业智能类</b></a>
+						<a href="#" data-filter=".graphic-design"><b>APP</b></a>
 					</div><!-- portfolioFilter -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
@@ -226,43 +226,71 @@
 			<div class="portfolioContainer  margin-b-50">
 
 				<div class="p-item web-design">
-					<a href="images/portfolio-13-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-13-400x400.jpg" alt=""></a>
+					<a href="images/p1.jpg" data-fluidbox>
+						<img src="images/p1.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item branding graphic-design">
-					<a href="images/portfolio-14-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-14-400x400.jpg" alt=""></a>
+					<a href="images/p2.jpg" data-fluidbox>
+						<img src="images/p2.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item web-design">
-					<a href="images/portfolio-15-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-15-400x400.jpg" alt=""></a>
+					<a href="images/p3.jpg" data-fluidbox>
+						<img src="images/p3.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item graphic-design">
-					<a class="img" href="images/portfolio-16-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-16-400x400.jpg" alt=""></a>
+					<a class="img" href="images/p3.jpg" data-fluidbox>
+						<img src="images/p3.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item branding graphic-design">
-					<a href="images/portfolio-17-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-17-400x400.jpg" alt=""></a>
+					<a href="images/p4.jpg" data-fluidbox>
+						<img src="images/p4.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item graphic-design web-design">
-					<a href="images/portfolio-18-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-18-400x400.jpg" alt=""></a>
+					<a href="images/p5.jpg" data-fluidbox>
+						<img src="images/p5.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item  graphic-design branding">
-					<a href="images/portfolio-19-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-19-400x400.jpg" alt=""></a>
+					<a href="images/p6.jpg" data-fluidbox>
+						<img src="images/p6.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 				<div class="p-item web-design branding">
-					<a href="images/portfolio-20-400x400.jpg" data-fluidbox>
-						<img src="images/portfolio-20-400x400.jpg" alt=""></a>
+					<a href="images/p7.jpg" data-fluidbox>
+						<img src="images/p7.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item web-design branding">
+					<a href="images/p8.jpg" data-fluidbox>
+						<img src="images/p8.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item web-design branding">
+					<a href="images/p9.jpg" data-fluidbox>
+						<img src="images/p9.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item web-design branding">
+					<a href="images/p10.jpg" data-fluidbox>
+						<img src="images/p10.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item graphic-design branding">
+					<a href="images/app1.jpg" data-fluidbox>
+						<img src="images/a1.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item graphic-design branding">
+					<a href="images/app2.jpg" data-fluidbox>
+						<img src="images/a2.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item graphic-design branding">
+					<a href="images/app3.jpg" data-fluidbox>
+						<img src="images/a3.jpg" alt=""></a>
+				</div><!-- p-item -->
+				<div class="p-item graphic-design branding">
+					<a href="images/app4.jpg" data-fluidbox>
+						<img src="images/a4.jpg" alt=""></a>
 				</div><!-- p-item -->
 
 			</div><!-- portfolioContainer -->
@@ -386,14 +414,11 @@
 				});
 			});
 		}
-
+       //判断访问设备函数
 		function isMobile() {
 			var userAgentInfo = navigator.userAgent;
-
 			var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
-
 			var mobile_flag = false;
-
 			//根据userAgent判断是否是手机
 			for (var v = 0; v < mobileAgents.length; v++) {
 				if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
@@ -401,15 +426,12 @@
 					break;
 				}
 			}
-
 			var screen_width = window.screen.width;
 			var screen_height = window.screen.height;
-
 			//根据屏幕分辨率判断是否是手机
 			if(screen_width < 500 && screen_height < 800){
 				mobile_flag = true;
 			}
-
 			return mobile_flag;
 		}
 	</script>
