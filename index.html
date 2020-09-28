@@ -23,6 +23,7 @@
 	<link href="css/responsive.css" rel="stylesheet">
 
 	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/hsycmsAlert.css" rel="stylesheet">
 </head>
 <body>
 
@@ -329,6 +330,14 @@
 		<img src="images/wx.jpg">
 	</div>
 
+	<div class="hsycms-model hsycms-model-alert" id="alert">
+		<div class="hscysm-model-title">温馨提示</div>
+		<div class="hsycms-model-text">这里是内容</div>
+		<div class="hsycms-model-btn">
+			<button type="button ok">确定</button>
+		</div>
+	</div>
+
 	<!-- SCIPTS -->
 
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -349,14 +358,22 @@
 	<script src="js/scripts.js"></script>
 	<script src="js/clipboard.min.js"></script>
 	<script src="js/jquery.popup.min.js"></script>
+	<script src="js/hsycmsAlert.js"></script>
 	<script>
+		//普通弹窗
+		function alert(txt){
+			hsycms.alert('alert',txt,function(){
+				hsycms.close('alert');
+				window.location.href='weixin://';
+			})
+		}
+
 		var mobile_flag = isMobile();
 		if (mobile_flag){
 			$(document).ready(function(){
 				var clipboard = new Clipboard('#copy_btn');
 				clipboard.on('success', function(e) {
-					alert("微信号复制成功,加好友请注明来意");
-					window.location.href='weixin://';
+					alert("微信号已复制到剪切板,确认跳转到微信,加好友请注明来意");
 				});
 			});
 		}else{
@@ -366,12 +383,6 @@
 					time: 1000,
 					classAnimateShow: 'flipInX',
 					classAnimateHide: 'hinge',
-					onPopupClose: function e() {
-						// console.log('0')
-					},
-					onPopupInit: function e() {
-						// console.log('1')
-					}
 				});
 			});
 		}
